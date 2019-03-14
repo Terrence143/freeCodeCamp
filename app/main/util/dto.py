@@ -1,4 +1,4 @@
-rom flask_restplus import Namespace, fields
+from flask_restplus import Namespace, fields
 
 
 class UserDto:
