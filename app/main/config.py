@@ -1,6 +1,6 @@
 import os
 
-# uncomment the line below for postgres database url from environment variable
+
 postgres_local_base = 'postgresql://postgres:password@localhost:5432/RESTplus'
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -11,8 +11,8 @@ class Config:
 
 
 class DevelopmentConfig(Config):
-    # uncomment the line below to use postgres
-    SQLALCHEMY_DATABASE_URI = postgres_local_base
+ 
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:password@localhost:5432/RESTplus'
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:password@localhost:5432/RESTplus'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -28,8 +28,8 @@ class TestingConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG = False
-    # uncomment the line below to use postgres
-    SQLALCHEMY_DATABASE_URI = postgres_local_base
+    
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:password@localhost:5432/RESTplus'
 
 
 config_by_name = dict(
