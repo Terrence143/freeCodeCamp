@@ -1,7 +1,7 @@
 import os
 
 
-postgres_local_base = 'postgresql://postgres:password@localhost:5432/RESTplus'
+postgres_local_base = 'mysql://root:password@localhost/restplus'
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -12,16 +12,16 @@ class Config:
 
 class DevelopmentConfig(Config):
  
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:password@localhost:5432/RESTplus'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:password@localhost/restplus'
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:password@localhost:5432/RESTplus'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:password@localhost/restplus'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class TestingConfig(Config):
     DEBUG = True
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:password@localhost:5432/RESTplus'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:password@localhost/restplus'
     PRESERVE_CONTEXT_ON_EXCEPTION = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -29,7 +29,7 @@ class TestingConfig(Config):
 class ProductionConfig(Config):
     DEBUG = False
     
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:password@localhost:5432/RESTplus'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:password@localhost/restplus'
 
 
 config_by_name = dict(

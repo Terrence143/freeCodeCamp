@@ -18,7 +18,7 @@ class TestDevelopmentConfig(TestCase):
         self.assertTrue(app.config['DEBUG'] is True)
         self.assertFalse(current_app is None)
         self.assertTrue(
-            app.config['SQLALCHEMY_DATABASE_URI'] == 'postgresql://postgres:password@localhost:5432/RESTplus'
+            app.config['SQLALCHEMY_DATABASE_URI'] == 'mysql://root:password@localhost/restplus'
         )
 
 
@@ -31,7 +31,7 @@ class TestTestingConfig(TestCase):
         self.assertFalse(app.config['SECRET_KEY'] is '')
         self.assertTrue(app.config['DEBUG'])
         self.assertTrue(
-            app.config['SQLALCHEMY_DATABASE_URI'] == 'postgresql://postgres:password@localhost:5432/RESTplus'
+            app.config['SQLALCHEMY_DATABASE_URI'] == 'mysql://root:password@localhost/restplus'
         )
 
 
